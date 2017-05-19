@@ -12,9 +12,10 @@ byte value;
   
 void setup()  { 
   Serial.begin(9600);
-  Serial.println("IceBoard_rv2_v150");
+  Serial.println("IceBoard_rv2_v155");
   Serial.println("Made by .tink3r!");
-  Serial.println("Just send me a 4 digit number,\n Example 4255 to set Channel 4 at 100%");
+  Serial.println("Mmhwaa-ahaha!");
+  Serial.println("send me a 4 digit number,\n Example 4255 to set Channel 4 at 100%");
   Serial.println("");
   Serial.println(1000 + EEPROM.read(0));
   Serial.println(2000 + EEPROM.read(1));
@@ -34,36 +35,36 @@ void loop()  {
       
       if (fan == 1) {
         channel1 = speed1;
+        EEPROM.write(0, channel1);
+        analogWrite(3, channel1);
       }
       if (fan == 2) {
         channel2 = speed1;
+        EEPROM.write(1, channel2);
+        analogWrite(5, channel2);
       }
       if (fan == 3) {
         channel3 = speed1;
+        EEPROM.write(2, channel3);
+        analogWrite(6, channel3);
       }
       if (fan == 4) {
         channel4 = speed1;
+        EEPROM.write(3, channel4);
+        analogWrite(9, channel4);
       }
       if (fan == 5) {
         channel5 = speed1;
+        EEPROM.write(4, channel5);
+        analogWrite(10, channel5);
       }
       if (fan == 6) {
         channel6 = speed1;
+        EEPROM.write(5, channel6);
+        analogWrite(11, channel6);
       }
-      
-      analogWrite(3, channel1);                    
-      analogWrite(5, channel2);                    
-      analogWrite(6, channel3);                    
-      analogWrite(9, channel4);                    
-      analogWrite(10, channel5);                    
-      analogWrite(11, channel6);    
-      
-      EEPROM.write(0, channel1);
-      EEPROM.write(1, channel2);
-      EEPROM.write(2, channel3);
-      EEPROM.write(3, channel4);
-      EEPROM.write(4, channel5);
-      EEPROM.write(5, channel6);
+
+
 
       Serial.println(message);
 
