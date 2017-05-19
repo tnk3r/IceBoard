@@ -64,10 +64,7 @@ void loop()  {
         analogWrite(11, channel6);
       }
 
-
-
       Serial.println(message);
-
       delay(10);
   } else {
     
@@ -84,7 +81,9 @@ void loop()  {
       analogWrite(9, channel4);                    
       analogWrite(10, channel5);                    
       analogWrite(11, channel6);
-      delay(10);
+      // delay(1000);
+      delay(100);
+
   }
 }
 
